@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Hunter</title>
+  <link rel="shortcut icon" href="images.png" type="image/x-icon">
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="w-100% px-10">
+  <header>
+    <nav>
+      <div class="mt-5 flex justify-between items-center">
+        <p class=" text-xl lg:text-2xl font-bold">Hot Gadgets</p>
+        <button id="btn-sign" class="btn btn-info text-white">Sign Up</button>
+      </div>
+    </nav>
+    <h1 class="text-6xl text-center font-bold">Phone <span class="font-extrabold text-blue-500">Hunter!!</span></h1>
+    <p class="text-xl text-center font-medium mt-6">Connecting You to Tomorrow: <span
+        class="font-semibold text-violet-400">Your Ultimate Online Phone Destination!</span></p>
+  </header>
+
+  <main class="container mx-auto mt-8">
+    <div class="hidden lg:flex items-center">
+      <img src="pngwing 3.png" alt="">
+      <img src="pngwing 1.png" alt="">
+      <img src="pngwing 2.png" alt="">
+    </div>
+    <h1 class="text-3xl text-center mb-8">Search Your phone here</h1>
+    <section class="bg-gray-100 p-4 m-4">
+      <div class="">
+        <input id="search-field" type="text" placeholder="Search..." class="input input-bordered w-full max-w-xs" />
+        <button onclick="handleSearch()" class="btn btn-accent">Search</button>
+      </div>
+    </section>
+
+    <!-- search result -->
+    <section>
+      <div id="loading-spinner" class="text-center my-40 hidden">
+        <span class="loading loading-spinner loading-lg"></span>
+
+      </div>
+      <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-2">
+      </div>
+      <div id="show-all-container" class="hidden text-center my-8">
+        <button onclick="handleShowAll()" class="btn btn-active btn-accent">Show All</button>
+
+      </div>
+    </section>
+
+    <!-- Open the modal using ID.showModal() method -->
+
+    <dialog id="show_modal" class="modal modal-bottom sm:modal-middle">
+      <form method="dialog" class="modal-box">
+        <h3 id="show-detail-phone-name" class="font-bold text-3xl text-center"></h3>
+        <div id="show-detail-container">
+
+        </div>
+        <div class="modal-action">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn bg-red-400 mx-auto">Close</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+
+  <script src="phone.js"></script>
+</body>
+
+</html>
